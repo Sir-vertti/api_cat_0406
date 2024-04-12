@@ -116,8 +116,7 @@ class BreedDetail extends StatelessWidget {
               Container(
                 width: 200,
                 height: 200,
-                color: Colors
-                    .grey, // Otra forma de mostrar un placeholder si la imagen no está disponible
+                color: Colors.grey,
               ),
             const SizedBox(height: 20),
             Text('Description: ${breed.description ?? "Not available"}'),
