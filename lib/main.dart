@@ -7,11 +7,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BreedsList(),
     );
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class BreedsList extends StatefulWidget {
-  const BreedsList({Key? key}) : super(key: key);
+  const BreedsList({super.key});
 
   @override
   _BreedsListState createState() => _BreedsListState();
@@ -65,7 +65,7 @@ class _BreedsListState extends State<BreedsList> {
                 children: [
                   ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: breeds.length,
                     itemBuilder: (context, index) {
                       final breed = breeds[index];
@@ -92,7 +92,7 @@ class _BreedsListState extends State<BreedsList> {
 class BreedDetail extends StatelessWidget {
   final Breed breed;
 
-  const BreedDetail({Key? key, required this.breed}) : super(key: key);
+  const BreedDetail({super.key, required this.breed});
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +119,7 @@ class BreedDetail extends StatelessWidget {
                 color: Colors
                     .grey, // Otra forma de mostrar un placeholder si la imagen no está disponible
               ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text('Description: ${breed.description ?? "Not available"}'),
             Text('Origin: ${breed.origin ?? "Not available"}'),
             Text('Life span: ${breed.lifeSpan ?? "Not available"}'),
